@@ -1,0 +1,308 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Staatliches&display=swap');
+
+html {
+  line-height: 1.25;
+  font-size: 15px;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background-color: black;
+  color: white
+}
+
+h2 {
+  margin: 0;
+  color: white;
+}
+
+#navbar {
+  display: flex;
+  flex-direction: row;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  margin: 0;
+  z-index: 1;
+  font-family: 'Staatliches', cursive;
+  background-color: black;
+  color: white;
+  font-size: 2rem;
+}
+
+#signature {
+  width: 300px;
+  text-align: center;
+  font-size: 2.5rem;
+  margin: 0 40px;
+  padding: 20px 0;
+  color: #03A062;
+}
+
+#navbar ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  width: calc(100% - 200px);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.8rem;
+  list-style-type: none;
+  margin: auto 0;
+}
+
+#navbar li {
+  padding: 0 3rem;
+}
+
+#navbar  a {
+  text-decoration: none;
+  color: white;
+}
+
+#navbar  a:hover {
+  color: #03A062;
+  transition: 0.5s;
+}
+
+#welcome-section {
+  margin-top: 50px;
+  margin-bottom: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  height: 100vh;
+  background-color: black;
+}
+
+#welcome-hello {
+  color: white;
+  font-family: 'Staatliches', cursive;
+  font-size: 5rem;
+  line-height: 0.15;
+}
+
+#vignette-div {
+  max-width: 50%;
+  max-height: 100%;
+  overflow: hidden;
+  position: relative;
+  display: inline-block;
+  z-index: 0;
+}
+
+#vignette-div::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  box-shadow: inset 0 0 1080px rgba(0, 0, 0, 1.0);
+}
+
+#welcome-image {
+  display: block;
+  max-height: 100vh;
+}
+
+#projects {
+  margin: 90px auto;
+  width: 90%;
+  display: grid;
+  background-color: white;
+  background-image: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.7),
+    rgba(255, 255, 255, 0.9)
+  ),
+    url("https://i.ibb.co/ZJDfQhS/Matrix-White.jpg");
+}
+
+#projects-section-header {
+  text-align: center;
+  color: black;
+  padding: 50px 0 30px 0;
+  font-family: 'Staatliches', cursive;
+  font-size: 3rem;
+}
+
+#projects-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  column-gap: 50px;
+  row-gap: 50px;
+  margin: 20px auto 60px auto;
+}
+
+
+.project-tile {
+  background-color: black;
+  border: 1px solid black;
+  border-radius: 3px;
+  max-width: 600px;
+  display: flex;
+  justify-content: center;
+}
+
+.project-tile a {
+  text-decoration: none;
+  color: white;
+}
+
+.project-tile a:hover {
+  color: #03A062;
+  transition: 0.5s;
+}
+
+.project-image {
+  width: 550px;
+  height: 250px;
+  object-fit: cover;
+  object-position: 50% 1%;
+}
+
+.project-title {
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.3rem;
+}
+
+#contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+}
+
+#contact-section-title {
+  text-align: center;
+  font-family: 'Staatliches', cursive;
+  font-size: 4rem;
+}
+
+#contact-section-subtitle {
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.4rem;
+  margin-top: 0;
+}
+
+#contact-links {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  width: 50%;
+  margin: 25px auto 90px auto;
+}
+
+.contact-details-button {
+  text-decoration: none;
+  color: white;
+  font-family: 'Staatliches', cursive;
+  font-size: 1.5rem;
+  margin-right: 25px;
+  transition: transform 0.7s ease-out;
+}
+
+.contact-details-button:hover {
+  color: #03A062;
+  transition: 0.5s;
+  transform: translateY(8px);
+}
+
+@media (max-width: 730px) {
+
+  
+  #signature {
+    font-size: 1.5rem;
+    width: 30%;
+    margin: 10px;
+  }
+  
+  #navbar ul {
+    font-size: 1rem;
+    width: 70%;
+    justify-content: center;
+  }
+  
+  #navbar li {
+    padding: 0;
+    margin-right: 20px;
+  }
+  
+  #welcome-hello {
+    font-size: 2rem;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  #welcome-hello h1 {
+    line-height: 2.4rem;
+    margin: 5px 0;
+  }
+  
+  #welcome-hello p {
+    line-height: 2rem;
+    margin: 5px 0;
+  }
+  
+  #projects {
+    width: 95%;
+  }
+  
+  #projects-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    width: 95%;
+  }
+  
+  .project-image {
+    width: 100%;
+  }
+  
+  #contact-section-title {
+    line-height: 3.4rem;
+  }
+  
+  #contact-links {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 15px;;
+  }
+  
+  .contact-details-button {
+    margin-right: 0;
+  }
+  
+  .contact-details-button {
+    transform: translateY(5px);
+  }
+}
+
+@media (max-width: 1290px) {
+  
+  #welcome-hello {
+    font-size: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  #welcome-hello h1 {
+    line-height: 2.7rem;
+    margin: 5px 0;
+  }
+  
+  #welcome-hello p {
+    line-height: 2.5rem;
+    margin: 5px 0;
+  }
+}

@@ -55,12 +55,12 @@ h2 {
   padding: 0 3rem;
 }
 
-#navbar  a {
+#navbar a {
   text-decoration: none;
   color: white;
 }
 
-#navbar  a:hover {
+#navbar a:hover {
   color: #03A062;
   transition: 0.5s;
 }
@@ -109,16 +109,25 @@ h2 {
 }
 
 #projects {
+  height: 85vh;
   margin: 90px auto;
   width: 90%;
   display: grid;
+  grid-template-rows: repeat(6, 1fr);
+  grid-template-areas:
+    "header"
+    "showcase"
+    "showcase"
+    "showcase"
+    "showcase"
+    ".";
   background-color: white;
-  background-image: linear-gradient(
-    90deg,
-    rgba(255, 255, 255, 0.7),
-    rgba(255, 255, 255, 0.9)
-  ),
+  background-image: linear-gradient(90deg,
+      rgba(255, 255, 255, 0.7),
+      rgba(255, 255, 255, 0.9)),
     url("https://i.ibb.co/ZJDfQhS/Matrix-White.jpg");
+  width: 95%;
+  scroll-margin-top: 100px;
 }
 
 #projects-section-header {
@@ -127,30 +136,49 @@ h2 {
   padding: 50px 0 30px 0;
   font-family: 'Staatliches', cursive;
   font-size: 3rem;
+  grid-area: header;
 }
 
 #projects-grid {
+  width: 90%;
+  height: 100%;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  column-gap: 50px;
-  row-gap: 50px;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-areas:
+    ". primary primary primary primary primary primary ."
+    ". primary primary primary primary primary primary ."
+    "secondary1 secondary1 secondary2 secondary2 secondary3 secondary3 secondary4 secondary4";
+  column-gap: 15px;
+  row-gap: 15px;
   margin: 20px auto 60px auto;
+  grid-area: showcase;
 }
 
 
 .project-tile {
-  background-color: black;
   border: 1px solid black;
   border-radius: 3px;
-  max-width: 600px;
-  display: flex;
-  justify-content: center;
+  background-color: whitesmoke;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.secondary-tile-title {
+  font-size: 1rem !important;
+  padding: 10px 0 !important;
 }
 
 .project-tile a {
+  height: 100%;
   text-decoration: none;
   color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  flex-wrap: wrap;
+  align-content: center;
 }
 
 .project-tile a:hover {
@@ -158,8 +186,9 @@ h2 {
   transition: 0.5s;
 }
 
+
 .project-image {
-  width: 550px;
+  width: 100%;
   height: 250px;
   object-fit: cover;
   object-position: 50% 1%;
@@ -169,6 +198,35 @@ h2 {
   text-align: center;
   font-family: 'Montserrat', sans-serif;
   font-size: 1.3rem;
+  background-color: black;
+  margin: 0;
+  padding: 20px 0;
+  width: 100%;
+}
+
+#miwinning-page {
+  grid-area: primary;
+  background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.1)), url(https://images2.imgbox.com/f3/00/CZEa1t0B_o.png);
+}
+
+#tribute-page {
+  grid-area: secondary1;
+  background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.1)), url(https://i.ibb.co/fY6wKk7/Tribute-Site.png);
+}
+
+#survey-page {
+  grid-area: secondary2;
+  background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.1)), url(https://i.ibb.co/JjDk02g/Webform-Site.png);
+}
+
+#landing-page {
+  grid-area: secondary3;
+  background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.1)), url(https://i.ibb.co/fMz4r19/Product-Site.png);
+}
+
+#technical-page {
+  grid-area: secondary4;
+  background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.1)), url(https://i.ibb.co/XpWmSsB/Techdoc-Site.png);
 }
 
 #contact {
@@ -176,7 +234,7 @@ h2 {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 80vh;
+  height: 100vh;
 }
 
 #contact-section-title {
@@ -218,89 +276,86 @@ h2 {
 
 @media (max-width: 730px) {
 
-  
+
   #signature {
     font-size: 1.5rem;
     width: 30%;
     margin: 10px;
   }
-  
+
   #navbar ul {
     font-size: 1rem;
     width: 70%;
     justify-content: center;
   }
-  
+
   #navbar li {
     padding: 0;
     margin-right: 20px;
   }
-  
+
   #welcome-hello {
     font-size: 2rem;
     display: flex;
     flex-direction: column;
     text-align: center;
   }
-  
+
   #welcome-hello h1 {
     line-height: 2.4rem;
     margin: 5px 0;
   }
-  
+
   #welcome-hello p {
     line-height: 2rem;
     margin: 5px 0;
   }
-  
-  #projects {
-    width: 95%;
-  }
-  
+
   #projects-grid {
     display: grid;
     grid-template-columns: 1fr;
     justify-items: center;
     width: 95%;
   }
-  
+
   .project-image {
     width: 100%;
   }
-  
+
   #contact-section-title {
     line-height: 3.4rem;
   }
-  
+
   #contact-links {
     flex-direction: column;
     align-items: center;
-    margin-top: 15px;;
+    margin-top: 15px;
+    ;
   }
-  
+
   .contact-details-button {
     margin-right: 0;
   }
-  
+
   .contact-details-button {
     transform: translateY(5px);
   }
 }
 
 @media (max-width: 1290px) {
-  
+
   #welcome-hello {
     font-size: 2.5rem;
     display: flex;
     flex-direction: column;
     text-align: center;
   }
-  
+
   #welcome-hello h1 {
     line-height: 2.7rem;
     margin: 5px 0;
   }
-  
+
   #welcome-hello p {
     line-height: 2.5rem;
     margin: 5px 0;
